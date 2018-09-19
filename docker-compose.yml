@@ -19,11 +19,11 @@ services:
       - /app/node_modules
       - ./server:/app
     ports:
-      - "9229:9229"
+      - "9228:9228"
     command:
       - node
-      - "--inspect-brk=0.0.0.0"
-      - "."  
+      - "--inspect-brk=0.0.0.0:9228"
+      - "." 
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -46,4 +46,13 @@ services:
     volumes:
       - /app/node_modules
       - ./worker:/app 
+    ports:
+      - "9229:9229"
+    command:
+      - node
+      - "--inspect-brk=0.0.0.0:9229"
+      - "."
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
   
