@@ -20,10 +20,6 @@ services:
       - ./server:/app
     ports:
       - "9228:9228"
-    command:
-      - node
-      - "--inspect-brk=0.0.0.0:9228"
-      - "." 
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -51,9 +47,5 @@ services:
       - ./worker:/app 
     ports:
       - "9229:9229"
-    command:
-      - node
-      - "--inspect-brk=0.0.0.0:9229"
-      - "."
 
   
