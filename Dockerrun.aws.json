@@ -1,0 +1,28 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [{
+        "name": "client",
+        "image": "lmalunin/multi-client",
+        "hostname": "client",
+        "essential": false
+    }, {
+        "name": "server",
+        "image": "lmalunin/multi-server",
+        "hostname": "api",
+        "essential": false
+    }, {
+        "name": "worker",
+        "image": "lmalunin/multi-worker",
+        "hostname": "worker",
+        "essential": false
+    }, {
+        "name": "nginx",
+        "image": "lmalunin/nginx",
+        "essential": true,
+        "portMappings": [{
+            "hostPort": 80,
+            "containerPort": 80
+        }],
+        "links": ["client", "server"]
+    }]
+}
