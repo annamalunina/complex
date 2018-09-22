@@ -20,7 +20,7 @@
         "memory": 128
     }, {
         "name": "nginx",
-        "image": "lmalunin/nginx",
+        "image": "lmalunin/multi-nginx",
         "essential": true,
         "portMappings": [{
             "hostPort": 80,
