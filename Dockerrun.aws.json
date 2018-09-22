@@ -21,6 +21,7 @@
     }, {
         "name": "nginx",
         "image": "lmalunin/multi-nginx",
+        "hostname": "nginx",
         "essential": true,
         "portMappings": [{
             "hostPort": 80,
